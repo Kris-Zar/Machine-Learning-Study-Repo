@@ -1,0 +1,8 @@
+# Datasets
+DATASETS/
+
+# Jupyter generated files
+.ipynb_checkpoints/
+
+# MNIST downloaded files
+DATASETS/MNIST/
