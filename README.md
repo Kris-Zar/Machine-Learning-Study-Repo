@@ -96,10 +96,30 @@ The most recent and ongoing part of the journey.
 |---|---|
 | `PyTorch.ipynb` | Tensor basics, autograd/backpropagation on 4 functions, full ANN for diabetes prediction |
 | `ANN_model.pt` | Saved model from the ANN above (input: 8 → hidden: 20 → hidden: 20 → output: 2) |
-| `MLP.ipynb` | Started an MLP for MNIST — PyTorch 2.14 + CUDA confirmed, architecture not yet written ❌ |
+| `MLP.ipynb` | Full MLP pipeline on MNIST — data loading, custom model, training loop, evaluation, and loss/accuracy curves ✅ |
 | `CNN_MNIST_CUDA_Assignment.ipynb` | Full CNN pipeline on MNIST — the most complete deep learning project in this repo |
 
-**CNN MNIST — details:**
+---
+
+#### MLP MNIST — details
+
+Added in commit `323a642`. A complete feedforward network trained on MNIST running on GPU (CUDA).
+
+Architecture — `MLP`:
+```
+Input: 1 × 28 × 28  →  Flatten: 784
+→ Linear(784, 128) + ReLU
+→ Linear(128, 64)  + ReLU
+→ Linear(64, 10)
+```
+
+Training config: 10 epochs · batch size 64 · Adam (lr=0.001) · CrossEntropyLoss
+
+Includes: training/test loss & accuracy tracking per epoch, sample prediction visualization (2×5 grid of MNIST digits with true vs predicted labels).
+
+---
+
+#### CNN MNIST — details
 
 This was a practical assignment and the most structured notebook I've written so far. It runs fully on GPU (NVIDIA RTX 3050, CUDA 12.6).
 
@@ -188,7 +208,6 @@ I'm keeping these here on purpose — they're part of the learning record.
 | `Box_Office_Revenue.ipynb` | `max_dapth=3` typo in XGBRegressor — `max_depth` was never set |
 | `time_series_analysis.py` | `from matplotlib.lines import lineStyles` — this doesn't exist |
 | `POST_and_PRE_Pruning_DT.ipynb` | Only loads Iris — pruning never implemented |
-| `MLP.ipynb` | Only MNIST transform defined — rest is empty (the CNN notebook is the completed version of this idea) |
 | `Heart_Disease_Prediction.ipynb` (v2) | Uses `RandomForestRegressor` for a classification task |
 
 ---
